@@ -13,9 +13,9 @@ import { ListFilterPipe } from './list-filter.pipe';
 })
 
 export class NgMultiSelectDropDownModule {
-    static forRoot(): ModuleWithProviders {
-      return {
-        ngModule: NgMultiSelectDropDownModule
-      };
-    }
+  static forRoot(): ModuleWithProviders<NgMultiSelectDropDownModule> {
+    return {
+      ngModule: NgMultiSelectDropDownModule
+    };
+  }
 }
