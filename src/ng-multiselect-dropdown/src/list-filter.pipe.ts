@@ -4,7 +4,8 @@ import { ListItem } from './multiselect.model';
 
 @Pipe({
     name: 'multiSelectFilter',
-    pure: false
+    pure: false,
+    standalone: true
 })
 export class ListFilterPipe implements PipeTransform {
     transform(items: ListItem[], filter: ListItem): ListItem[] {
