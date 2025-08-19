@@ -1,10 +1,18 @@
-import { FormBuilder, FormGroup } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import { IDropdownSettings } from '../../../ng-multiselect-dropdown/src';
+import { FormBuilder, FormGroup, ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { NgMultiSelectDropDownModule, IDropdownSettings } from '../../../ng-multiselect-dropdown/src';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'multiple-demo',
-  templateUrl: './multiple-demo.html'
+  templateUrl: './multiple-demo.html',
+  standalone: true,
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NgMultiSelectDropDownModule
+  ]
 })
 export class MultipleDemoComponent implements OnInit {
   myForm: FormGroup;

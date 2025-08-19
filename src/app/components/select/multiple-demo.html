@@ -3,7 +3,7 @@
     <div class="col-md-4">
       <h3>Select Multiple Cities</h3>
       <form [formGroup]="myForm">
-        <ng-multiselect-dropdown name="city" [placeholder]="'Select City'" [data]="cities" formControlName="city" [disabled]="disabled" [settings]="dropdownSettings" (onDropDownClose)="onDropDownClose()" (onSelect)="onItemSelect($event)" (onSelectAll)="onSelectAll($event)">
+        <ng-multiselect-dropdown name="city" [placeholder]="'Select City'" [settings]="dropdownSettings" [data]="cities" formControlName="city" [disabled]="disabled" (onDropDownClose)="onDropDownClose()" (onSelect)="onItemSelect($event)" (onDeSelect)="onItemDeSelect($event)" (onSelectAll)="onSelectAll($event)">
         </ng-multiselect-dropdown>
       </form>
       <p></p>
@@ -50,12 +50,12 @@
       </pre>
     </div>
   </div>
-  <tabset>
+  <!-- <tabset>
     <tab heading="Html">
       <sh-code-viewer [code]="htmlCode" [language]="'html'"></sh-code-viewer>
     </tab>
     <tab heading="Typescript">
       <sh-code-viewer [code]="typescriptCode" [language]="'typescript'"></sh-code-viewer>
     </tab>
-  </tabset>
+  </tabset> -->
 </div>

@@ -4,6 +4,7 @@ declare let hljs: any;
 
 @Component({
     selector: 'sh-code-viewer',
+    standalone: true,
     template: `
     <pre>
         <code #codeView [className]="language" [innerHTML]="code"></code>

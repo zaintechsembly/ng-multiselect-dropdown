@@ -1,8 +1,17 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { NgMultiSelectDropDownModule } from '../../../ng-multiselect-dropdown/src';
 
 @Component({
   selector: 'single-demo',
-  templateUrl: './single-demo.html'
+  templateUrl: './single-demo.html',
+  standalone: true,
+  imports: [
+    CommonModule,
+    FormsModule,
+    NgMultiSelectDropDownModule
+  ]
 })
 export class SingleDemoComponent implements OnInit {
   cities: Array<string> = [];
