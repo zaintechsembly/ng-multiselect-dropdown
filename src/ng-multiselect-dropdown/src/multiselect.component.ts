@@ -5,7 +5,6 @@ import { ListItem } from "./multiselect.model";
 import type { IDropdownSettings } from "./multiselect.model";
 import { ListFilterPipe } from "./list-filter.pipe";
 import { ClickOutsideDirective } from "./click-outside.directive";
-
 export const DROPDOWN_CONTROL_VALUE_ACCESSOR: any = {
   provide: NG_VALUE_ACCESSOR,
   useExisting: forwardRef(() => MultiSelectComponent),
@@ -23,7 +22,6 @@ const noop = () => {};
   imports: [
     CommonModule,
     FormsModule,
-    ListFilterPipe,
     ClickOutsideDirective
   ]
 })
@@ -121,7 +119,16 @@ export class MultiSelectComponent implements ControlValueAccessor {
     this.onFilterChange.emit($event);
   }
 
-  constructor(private cdr: ChangeDetectorRef,private listFilterPipe:ListFilterPipe) {}
+  constructor(private cdr: ChangeDetectorRef) {}
+
+  private filterData(data: Array<ListItem>, filter: ListItem): Array<ListItem> {
+    const pipe = new ListFilterPipe();
+    return pipe.transform(data, filter);
+  }
+
+  get filteredData(): Array<ListItem> {
+    return this.filterData(this._data, this.filter);
+  }
 
   onItemClick($event: any, item: ListItem): boolean | void {
     if (this.disabled || item.isDisabled) {
@@ -220,7 +227,7 @@ export class MultiSelectComponent implements ControlValueAccessor {
 
   isAllItemsSelected(): boolean {
     // get disabld item count
-    let filteredItems = this.listFilterPipe.transform(this._data,this.filter);
+    let filteredItems = this.filterData(this._data, this.filter);
     const itemDisabledCount = filteredItems.filter(item => item.isDisabled).length;
     // take disabled items into consideration when checking
     if ((!this.data || this.data.length === 0) && this._settings.allowRemoteDataSearch) {
@@ -324,7 +331,7 @@ export class MultiSelectComponent implements ControlValueAccessor {
     }
     if (!this.isAllItemsSelected()) {
       // filter out disabled item first before slicing
-      this.selectedItems = this.listFilterPipe.transform(this._data,this.filter).filter(item => !item.isDisabled).slice();
+      this.selectedItems = this.filterData(this._data, this.filter).filter(item => !item.isDisabled).slice();
       this.onSelectAll.emit(this.emittedValue(this.selectedItems));
     } else {
       this.selectedItems = [];

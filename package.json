@@ -5,6 +5,11 @@
   "description": "Angular Multi-Select Dropdown",
   "author": "Nilesh Patel",
   "license": "MIT",
+  "peerDependencies": {
+    "@angular/core": "^19.0.0",
+    "@angular/common": "^19.0.0",
+    "@angular/forms": "^19.0.0"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port 4400",
@@ -41,23 +46,19 @@
     "url": "https://github.com/nileshpatel17/ng-multiselect-dropdown/issues"
   },
   "homepage": "https://github.com/nileshpatel17/ng-multiselect-dropdown#readme",
-  "peerDependencies": {
-    "@angular/common": ">=19.0.0",
-    "@angular/core": ">=19.0.0"
-  },
   "devDependencies": {
     "@angular-devkit/build-angular": "^19.2.15",
-    "@angular/animations": "^19.0.0",
+    "@angular/animations": "^19.2.12",
     "@angular/cli": "^19.2.15",
-    "@angular/common": "^19.0.0",
-    "@angular/compiler": "^19.0.0",
-    "@angular/compiler-cli": "^19.0.0",
-    "@angular/core": "^19.0.0",
-    "@angular/forms": "^19.0.0",
-    "@angular/language-service": "^19.0.0",
-    "@angular/platform-browser": "^19.0.0",
-    "@angular/platform-browser-dynamic": "^19.0.0",
-    "@angular/router": "^19.0.0",
+    "@angular/common": "^19.2.12",
+    "@angular/compiler": "^19.2.12",
+    "@angular/compiler-cli": "^19.2.12",
+    "@angular/core": "^19.2.12",
+    "@angular/forms": "^19.2.12",
+    "@angular/language-service": "^19.2.12",
+    "@angular/platform-browser": "^19.2.12",
+    "@angular/platform-browser-dynamic": "^19.2.12",
+    "@angular/router": "^19.2.12",
     "@types/node": "^20.0.0",
     "angular-cli-ghpages": "^0.6.0-rc.2",
     "copyfiles": "^2.0.0",

@@ -1,5 +1,4 @@
-export { MultiSelectComponent } from './multiselect.component';
-// export { NgMultiSelectDropDownModule } from './ng-multiselect-dropdown.module';
-export { IDropdownSettings } from './multiselect.model';
-export { ListFilterPipe } from './list-filter.pipe';
-export { ClickOutsideDirective } from './click-outside.directive';
+export * from './multiselect.component';
+export * from './list-filter.pipe';
+export * from './click-outside.directive';
+export type { IDropdownSettings } from './multiselect.model';
