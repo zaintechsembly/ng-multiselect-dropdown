@@ -1,7 +1,8 @@
 import { Component, HostListener, forwardRef, Input, Output, EventEmitter, ChangeDetectionStrategy, ChangeDetectorRef } from "@angular/core";
 import { NG_VALUE_ACCESSOR, ControlValueAccessor, FormsModule } from "@angular/forms";
 import { CommonModule } from "@angular/common";
-import { ListItem, IDropdownSettings } from "./multiselect.model";
+import { ListItem } from "./multiselect.model";
+import type { IDropdownSettings } from "./multiselect.model";
 import { ListFilterPipe } from "./list-filter.pipe";
 import { ClickOutsideDirective } from "./click-outside.directive";
 
@@ -122,7 +123,7 @@ export class MultiSelectComponent implements ControlValueAccessor {
 
   constructor(private cdr: ChangeDetectorRef,private listFilterPipe:ListFilterPipe) {}
 
-  onItemClick($event: any, item: ListItem) {
+  onItemClick($event: any, item: ListItem): boolean | void {
     if (this.disabled || item.isDisabled) {
       return false;
     }
@@ -317,7 +318,7 @@ export class MultiSelectComponent implements ControlValueAccessor {
     this.onDropDownClose.emit();
   }
 
-  toggleSelectAll() {
+  toggleSelectAll(): boolean | void {
     if (this.disabled) {
       return false;
     }

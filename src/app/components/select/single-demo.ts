@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { NgMultiSelectDropDownModule } from '../../../ng-multiselect-dropdown/src';
+import { MultiSelectComponent } from '../../../ng-multiselect-dropdown/src';
 
 @Component({
   selector: 'single-demo',
@@ -10,7 +10,7 @@ import { NgMultiSelectDropDownModule } from '../../../ng-multiselect-dropdown/sr
   imports: [
     CommonModule,
     FormsModule,
-    NgMultiSelectDropDownModule
+    MultiSelectComponent
   ]
 })
 export class SingleDemoComponent implements OnInit {
@@ -19,53 +19,6 @@ export class SingleDemoComponent implements OnInit {
   dropdownSettings: any = {};
   closeDropdownSelection = false;
   disabled = false;
-  htmlCode = `
-   &lt;ng-multiselect-dropdown
-       name="city"
-       [data]="cities"
-       [(ngModel)]="selectedItem"
-       [settings]="dropdownSettings"
-       (onSelect)="onItemSelect($event)"
-       [disabled]="disabled"
-   &lt;/ng-multiselect-dropdown&gt;
-`;
-  typescriptCode = `
-    import { Component, OnInit } from '@angular/core';
-
-    @Component({
-        selector: 'single-demo',
-        templateUrl: './single-demo.html'
-    })
-    export class SingleDemoComponent implements OnInit {
-        cities: Array<string> = [];
-        selectedItem: Array<string> = [];
-        dropdownSettings: any = {};
-        closeDropdownSelection=false;
-        disabled=false;
-
-        ngOnInit() {
-            this.cities = ['Mumbai', 'New Delhi', 'Bangaluru', 'Pune', 'Navsari'];
-            this.selectedItem = ['Pune'];
-            this.dropdownSettings = {
-                singleSelection: true,
-                selectAllText: 'Select All',
-                unSelectAllText: 'UnSelect All',
-                allowSearchFilter: true,
-                closeDropDownOnSelection: this.closeDropdownSelection
-            };
-        }
-
-        onItemSelect(item: any) {
-            console.log('onItemSelect', item);
-        }
-
-        toggleCloseDropdownSelection() {
-            this.closeDropdownSelection = !this.closeDropdownSelection;
-            this.dropdownSettings = Object.assign({}, this.dropdownSettings,{closeDropDownOnSelection: this.closeDropdownSelection});
-        }
-
-    }
-`;
 
   ngOnInit() {
     this.cities = ['Mumbai', 'New Delhi', 'Bangaluru', 'Pune', 'Navsari'];
