@@ -16,7 +16,8 @@ To build and generate a distributable tarball:
 npx ng-packagr -p ng-package.json
 
 # 2. Create an npm package tarball
-npm pack
+npm pack --pack-destination ../build
+
 
 
 ![demo](Screenshots/ng-multiselect-dropdown_v0.1.6.gif)
