@@ -1,10 +1,8 @@
 {
-  "name": "ng-multiselect-dropdown",
-  "version": "0.2.12",
-  "private": true,
+  "name": "ng-multiselect-dropdown-standalone",
+  "version": "0.2.13",
   "description": "Angular Multi-Select Dropdown",
-  "author": "Nilesh Patel",
-  "license": "MIT",
+  "author": "Devs",
   "peerDependencies": {
     "@angular/core": "^19.0.0",
     "@angular/common": "^19.0.0",
@@ -21,9 +19,9 @@
     "build:lib": "npm run clear:lib && ng-packagr -p ng-package.json",
     "postbuild:lib": "npm run copyfiles",
     "prepublishOnly": "npm run build:prod",
-    "publish": "ngh --no-silent false --name=\"nileshpatel17\" --email=\"nilesh.nvs@hotmail.com\"",
-    "deploy": "ng build --configuration production && angular-cli-ghpages --no-silent --repo=https://github.com/NileshPatel17/ng-multiselect-dropdown.git --name=\"Nilesh Patel\" --email=nilesh.nvs@hotmail.com",
-    "deployOnly": "angular-cli-ghpages --no-silent --repo=https://github.com/NileshPatel17/ng-multiselect-dropdown.git --name=\"Nilesh Patel\" --email=nilesh.nvs@hotmail.com",
+    "publish": "ngh --no-silent false",
+    "deploy": "ng build --configuration production && angular-cli-ghpages",
+    "deployOnly": "angular-cli-ghpages",
     "contributors:add": "all-contributors add",
     "contributors:generate": "all-contributors generate"
   },
@@ -38,14 +36,6 @@
     "dropdown",
     "checkbox"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/nileshpatel17/ng-multiselect-dropdown.git"
-  },
-  "bugs": {
-    "url": "https://github.com/nileshpatel17/ng-multiselect-dropdown/issues"
-  },
-  "homepage": "https://github.com/nileshpatel17/ng-multiselect-dropdown#readme",
   "devDependencies": {
     "@angular-devkit/build-angular": "^19.2.15",
     "@angular/animations": "^19.2.12",
@@ -74,4 +64,5 @@
   "dependencies": {
     "tslib": "^2.0.0"
   }
+  
 }
