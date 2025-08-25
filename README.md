@@ -18,6 +18,9 @@ npx ng-packagr -p ng-package.json
 # 2. Create an npm package tarball
 npm pack --pack-destination ../build
 
+# 3. installation path
+ npm install https://raw.githubusercontent.com/zaintechsembly/ng-multiselect-dropdown/0.2.11-upgrade/build/ng-multiselect-dropdown-standalone-0.2.11-upgrade.tgz
+
 
 
 ![demo](Screenshots/ng-multiselect-dropdown_v0.1.6.gif)
