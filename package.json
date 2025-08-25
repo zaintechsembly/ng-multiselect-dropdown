@@ -1,6 +1,6 @@
 {
   "name": "ng-multiselect-dropdown-standalone",
-  "version": "0.2.13",
+  "version": "0.2.11-upgrade",
   "description": "Angular Multi-Select Dropdown",
   "author": "Devs",
   "peerDependencies": {
@@ -24,7 +24,7 @@
     "deployOnly": "angular-cli-ghpages",
     "contributors:add": "all-contributors add",
     "contributors:generate": "all-contributors generate"
-  },
+  },  
   "keywords": [
     "angular",
     "angular19",
