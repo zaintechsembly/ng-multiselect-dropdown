@@ -6,6 +6,19 @@
 
 Angular multiselect dropdown component for web applications. Easy to integrate and use. It can be bound to any custom data source.
 
+
+# 📦 Build & Package
+
+To build and generate a distributable tarball:
+
+```bash
+# 1. Build the Angular library
+npx ng-packagr -p ng-package.json
+
+# 2. Create an npm package tarball
+npm pack
+
+
 ![demo](Screenshots/ng-multiselect-dropdown_v0.1.6.gif)
 
 ## Getting Started
